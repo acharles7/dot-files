@@ -86,19 +86,6 @@ scrolling:
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
   multiplier: 3
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number
-  # of lines the terminal should scroll when the alternate
-  # screen buffer is active. This is used to allow mouse
-  # scrolling for applications like `man`.
-  #
-  # To disable this completely, set `faux_multiplier` to 0.
-  faux_multiplier: 0
-
-  # Automatically scroll to the bottom when new text is written
-  # to the terminal.
-  auto_scroll: true
 
 # Font configuration
 #font:
@@ -548,17 +535,16 @@ key_bindings:
   #- { key: L,         mods: Control, chars: "\x0c"                            }
   - { key: Left,      mods: Alt,     chars: "\x1bb"                       }
   - { key: Right,     mods: Alt,     chars: "\x1bf"                       }
-#  - { key: Delete,    mods: Alt,     action: Delete,         mode: ~Alt        }  
-#  - { key: D,  mods: Alt,           chars: "\x1bd"                       }
+  
 #   - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
 #   - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
 #   - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
 #   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
-#   - { key: PageUp,   mods: Shift,   action: ScrollPageUp   }
-#   - { key: PageDown, mods: Shift,   action: ScrollPageDown }
-#   - { key: End,      mods: Shift,   action: ScrollToBottom }
-#   - { key: Home,     mods: Shift,   action: ScrollToTop    }
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp   }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown }
+  - { key: End,      mods: Shift,   action: ScrollToBottom }
+  - { key: Home,     mods: Shift,   action: ScrollToTop    }
 
 #debug:
   # Display the time it takes to redraw each frame.
