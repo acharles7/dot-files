@@ -1,6 +1,9 @@
 # .zshrc 2026
 # Author: Charles Patel
 
+# Deduplicate $PATH on every shell start
+typeset -U PATH path
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -10,7 +13,7 @@ ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode auto      
 
 # Command execution timestamp in the history command output
-# three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# Three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
@@ -32,6 +35,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias zshconfig="code ~/.zshrc"
+alias cd=" cd"
+alias ..=" cd ..; ls"
+alias ...=" cd ..; cd ..; ls"
+alias ....=" cd ..; cd ..; cd ..; ls"
+alias cd..=".."
+alias cd...="..."
+alias cd....="...."
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
